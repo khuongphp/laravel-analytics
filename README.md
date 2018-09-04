@@ -4,7 +4,6 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/laravel-analytics/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-analytics)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-analytics.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-analytics)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/22e652a0-01c0-4b8c-9ada-c9ba5cba17c7.svg?style=flat-square)](https://insight.sensiolabs.com/projects/22e652a0-01c0-4b8c-9ada-c9ba5cba17c7)
 [![StyleCI](https://styleci.io/repos/32067087/shield)](https://styleci.io/repos/32067087)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-analytics.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-analytics)
 
@@ -13,6 +12,7 @@ Using this package you can easily retrieve data from Google Analytics.
 Here are a few examples of the provided methods:
 
 ```php
+use Analytics;
 use Spatie\Analytics\Period;
 
 //fetch the most visited pages for today and the past week
@@ -36,7 +36,7 @@ This package can be installed through Composer.
 composer require spatie/laravel-analytics
 ```
 
-In Laravel 5.5 the package will autoregister the service provider. In Laravel 5.4 you must install this service provider.
+In Laravel 5.5 and above the package will autoregister the service provider. In Laravel 5.4 you must install this service provider.
 
 ```php
 // config/app.php
@@ -47,7 +47,7 @@ In Laravel 5.5 the package will autoregister the service provider. In Laravel 5.
 ];
 ```
 
-In Laravel 5.5 the package will autoregister the facade. In Laravel 5.4 you must install the facade manually.
+In Laravel 5.5 and above the package will autoregister the facade. In Laravel 5.4 you must install the facade manually.
 
 ```php
 // config/app.php
@@ -76,7 +76,8 @@ return [
 
     /*
      * Path to the client secret json file. Take a look at the README of this package
-     * to learn how to get this file.
+     * to learn how to get this file. You can also pass the credentials as an array 
+     * instead of a file path.
      */
     'service_account_credentials_json' => storage_path('app/analytics/service-account-credentials.json'),
 
